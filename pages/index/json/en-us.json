@@ -1,0 +1,113 @@
+[{
+	"id": 13,
+	"show": 1,
+	"flag": 1,
+	"type": 1,
+	"name": "Primelist-新",
+	"sort": 1,
+	"title": "Newlisting",
+	"summary": {
+		"content": "625,000 VLX giveaways",
+		"color": ""
+	},
+	"imageUrl": "https://download.hbfile.net/hbg/img/9416a8a7db80c48d4fa2ba339c3f9410.png",
+	"frontImageUrl": "https://download.hbfile.net/hbg/img/9416a8a7db80c48d4fa2ba339c3f9410.png",
+	"bgImageUrl": "",
+	"tagUrl": "https://download.hbfile.net/hbg/img/7425afe8ef9d94777e440f83c691ea96.png",
+	"url": {
+		"jumpMode": 1,
+		"jumpUrl": "https://www.huobi.co.nl/en-us/topic/newlisting",
+		"jumpSymbol": null,
+		"title": "Newlisting",
+		"needLogin": 0
+	},
+	"focusType": 1,
+	"focusContent": "48-hr time offer",
+	"beginTime": 1652947346858,
+	"endTime": 0,
+	"style": 1
+}, {
+	"id": 5,
+	"show": 1,
+	"flag": 1,
+	"type": 1,
+	"name": "Top Up-新版本",
+	"sort": 2,
+	"title": "Top Up",
+	"summary": {
+		"content": "Better Prices",
+		"color": ""
+	},
+	"imageUrl": "https://download.hbfile.net/hbg/img/2a1558cd1b9913e85cd51563a9f92f71.png",
+	"frontImageUrl": "https://download.hbfile.net/hbg/img/3357f05280dabde62f00b8fa62913272.png",
+	"bgImageUrl": "",
+	"tagUrl": "",
+	"url": {
+		"jumpMode": 39,
+		"jumpUrl": "",
+		"jumpSymbol": null,
+		"title": "Top Up",
+		"needLogin": 0
+	},
+	"focusType": 1,
+	"focusContent": "Deposit/Buy",
+	"beginTime": 1652947346858,
+	"endTime": 0,
+	"style": 1
+}, {
+	"id": null,
+	"show": 1,
+	"flag": 1,
+	"type": 2,
+	"name": "Earn",
+	"sort": 3,
+	"title": "Huobi Earn",
+	"summary": {
+		"content": "GST",
+		"color": ""
+	},
+	"imageUrl": "https://saving-doc.s3.ap-northeast-1.amazonaws.com/prd/20220501/5ad7c45749014a3aa4c911732a540376.png",
+	"frontImageUrl": "https://s3.cn-north-1.amazonaws.com.cn/%2Fstatic.huobiwallet.com/resources/downloads/packages/android/test/earn.png",
+	"bgImageUrl": null,
+	"tagUrl": "https://s3.cn-north-1.amazonaws.com.cn/%2Fstatic.huobiwallet.com/resources/downloads/packages/android/test/%E6%A0%87%E7%AD%BE.png",
+	"url": {
+		"jumpMode": 1,
+		"jumpUrl": "https://www.huobi.co.ma/en-us/financial/earn/h5",
+		"jumpSymbol": null,
+		"title": "Huobi Earn",
+		"needLogin": 0
+	},
+	"focusType": 1,
+	"focusContent": "APY 50.00%",
+	"beginTime": 1652947346863,
+	"endTime": null,
+	"style": 1
+}, {
+	"id": null,
+	"show": 1,
+	"flag": 1,
+	"type": 2,
+	"name": "直播-接口",
+	"sort": 4,
+	"title": "Huobi live",
+	"summary": {
+		"content": "JIMMY'S LIVE-Wh...",
+		"color": ""
+	},
+	"imageUrl": "https://content-all-s3.hbfile.net/images/2022-05-11/5104ac472022f33687396f562f966db9.png",
+	"frontImageUrl": null,
+	"bgImageUrl": null,
+	"tagUrl": "https://s3.cn-north-1.amazonaws.com.cn/%2Fstatic.huobiwallet.com/resources/downloads/packages/android/test/%E9%A2%84%E5%91%8A-%E8%8B%B1%E6%96%87.png",
+	"url": {
+		"jumpMode": 201,
+		"jumpUrl": "holigeit://open/v1?login=0&url=ihuobiglobal://m.hbg.com/live/room?liveId=195",
+		"jumpSymbol": null,
+		"title": "Huobi live",
+		"needLogin": 0
+	},
+	"focusType": 2,
+	"focusContent": "JIMMY'S LIVE-Wh...",
+	"beginTime": 1652947346866,
+	"endTime": 1652961600000,
+	"style": 5
+}]

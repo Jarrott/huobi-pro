@@ -1,0 +1,63 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom",
+				"backgroundColor": "#24273c"
+			},
+
+			"app-plus": {
+				"titleNView": false
+			}
+		}, {
+			"path": "pages/trade/trade",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#0c1723",
+		"backgroundColor": "#24273c",
+		"backgroundColorBottom": "#24273c",
+		"backgroundColorTop": "#24273c"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/icon/ic_tab1_1.png",
+			"selectedIconPath": "static/icon/ic_tab1_2.png",
+			"text": "huobi"
+		}, {
+			"pagePath": "pages/live/live",
+			"iconPath": "static/icon/ic_tab3_1.png",
+			"selectedIconPath": "static/icon/ic_tab3_2.png",
+			"text": "%main_cs%"
+		}, {
+			"pagePath": "pages/my/my3",
+			"iconPath": "static/icon/ic_tab4_1.png",
+			"selectedIconPath": "static/icon/ic_tab4_2.png",
+			"text": "%main_me%"
+		}, {
+			"pagePath": "pages/live/live2",
+			"iconPath": "static/icon/ic_tab3_1.png",
+			"selectedIconPath": "static/icon/ic_tab3_2.png",
+			"text": "%main_cs%"
+		}, {
+			"pagePath": "pages/my/my1",
+			"iconPath": "static/icon/ic_tab4_1.png",
+			"selectedIconPath": "static/icon/ic_tab4_2.png",
+			"text": "%main_me%"
+		}]
+	}
+}
