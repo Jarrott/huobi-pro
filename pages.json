@@ -1,0 +1,76 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"enablePullDownRefresh": true,
+				"navigationStyle": "custom",
+				"backgroundColor": "#24273c"
+			},
+
+			"app-plus": {
+				"titleNView": false
+			}
+		}, {
+			"path": "pages/trade/trade",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/me/me",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#0c1723",
+		"backgroundColor": "#24273c",
+		"backgroundColorBottom": "#24273c",
+		"backgroundColorTop": "#24273c"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/icon/index.svg",
+			"selectedIconPath": "static/icon/index-active.svg",
+			"text": "huobi"
+		}, {
+			"pagePath": "pages/index/index",
+			"iconPath": "static/icon/market.svg",
+			"selectedIconPath": "static/icon/market-active.svg",
+			"text": "Markets"
+		}, {
+			"pagePath": "pages/index/index",
+			"iconPath": "static/icon/exchange.svg",
+			"selectedIconPath": "static/icon/exchange-active.svg",
+			"text": "Trade"
+		}, {
+			"pagePath": "pages/index/index",
+			"iconPath": "static/icon/dm.svg",
+			"selectedIconPath": "static/icon/dm-active.svg",
+			"text": "Derivatives"
+		}, {
+			"pagePath": "pages/me/me",
+			"iconPath": "static/icon/fiance.svg",
+			"selectedIconPath": "static/icon/fiance-active.svg",
+			"text": "Assets"
+		}, {
+			"pagePath": "pages/me/me",
+			"iconPath": "static/icon/me.png",
+			"selectedIconPath": "static/icon/me-active.png",
+			"text": "Me"
+		}]
+	}
+}
