@@ -6,6 +6,7 @@
   "author": "angela <Angela.Li.ZJU@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@svgdotjs/svg.js": "^3.1.2",
     "binary": "^0.3.0",
     "moment": "^2.29.3",
     "moment-timezone": "^0.5.34",

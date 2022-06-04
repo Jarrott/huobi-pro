@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="container">
-			<view class="user-info">
+			<view class="user-info" @lick="to('/pages/me/login')">
 				<image src="../../static/icon/me/avatar.png" class="avatar" />
 				<view>
 					<view class="username">Log in/Sign Up</view>
@@ -99,15 +99,25 @@
 				</view>
 			</view>
 		</view>
+		<tab-bar />
 	</view>
 </template>
 
-<script>
+<script>	
+	import TabBar from '@/components/jacksin-fooBar/fooBar.vue'
 	export default {
+		components: {
+			TabBar
+		},
 		data() {
 			return {
 
 			}
+		},
+		onShow() {
+		},
+		onLoad () {
+
 		},
 		methods: {
 

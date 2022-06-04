@@ -10,7 +10,7 @@
 			</swiper-item>
 		</swiper>
 		<view class="topSymbolPrice flex">
-			<view v-for="(item, index) in topSymbolPrice"
+			<view v-for="(item, index) in topSymbolPrice" @click="gotoTrade(item)"
 				:class="['t-item',{'up': item.upDown> 0}, {'down': item.upDown<=0}]">
 				<view><text class="symbol ft-14 bold">{{item.baseCurrency}}/{{item.quoteCurrency}}</text><text
 						class="ft-12">{{item.upDown>0? '+': ''}}{{(item.upDown*100).toFixed(2)}}%</text></view>
@@ -569,7 +569,11 @@
 			this.getProduct();
 		},
 		methods: {
-
+			gotoTrade(item) {
+				uni.navigateTo({
+					url: `/pages/trade/trade?symbol=${item.symbol}`,
+				})
+			},
 			toggle() {
 				this.showSelect = !this.showSelect;
 			},

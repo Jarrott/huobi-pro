@@ -7,7 +7,7 @@
 		</uni-nav-bar>
 		<v-tabs v-model="current" :tabs="tabs" @change="changeTab" :scroll="false" :lineAnimation="false" height="40px"
 			lineHeight="2px" bgColor="#161f2f" color="#7286a5" class="top-tab"></v-tabs>
-		<view class="flex detail">
+		<view class="flex detail" v-if="detail.close">
 			<view class="flex-1">
 				<view class="price down">{{detail.close.toFixed(8)}}</view>
 				<view class="price-two">≈¥{{detail.close}}<text

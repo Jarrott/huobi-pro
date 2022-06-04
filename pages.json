@@ -27,6 +27,14 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/me/login",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	],
 	"globalStyle": {
@@ -72,5 +80,15 @@
 			"selectedIconPath": "static/icon/me-active.png",
 			"text": "Me"
 		}]
+	},
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"foo-bar": "@/components/fooBar/fooBar.vue",
+			"home": "@/components/fooBar/home.vue",
+			"cate": "@/components/fooBar/cate.vue",
+			"shop": "@/components/fooBar/shop.vue",
+			"user": "@/components/fooBar/user.vue"
+		}
 	}
 }

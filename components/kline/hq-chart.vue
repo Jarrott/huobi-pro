@@ -434,12 +434,8 @@
 			this.ChartType = "KLine";
 		},
 		mounted() {
-			// #ifdef H5
 			this.CreateKLineChart()
-			// #endif
 			this.ChartType = this.DefaultChart;
-
-
 		},
 		methods: {
 			changeDepth() {
@@ -726,6 +722,7 @@
 
 				var chart = HQChart.JSChart.Init(this.$refs.kline);
 				JSCommon.JSChartGetResource().FrameLogo.Text = 'HuoBi';
+				console.log(9999);
 				this.Minute.Option.Symbol = this.symbol;
 				this.Minute.Option.NetworkFilter = this.NetworkFilter;
 				chart.SetOption(this.Minute.Option);
