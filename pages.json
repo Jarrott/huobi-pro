@@ -35,6 +35,14 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/me/signup",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	],
 	"globalStyle": {

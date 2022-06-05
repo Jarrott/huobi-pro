@@ -1,7 +1,8 @@
 <template>
 	<view>
+		<view class="status-bar"></view>
 		<view class="container">
-			<view class="user-info" @lick="to('/pages/me/login')">
+			<view class="user-info" @click="login">
 				<image src="../../static/icon/me/avatar.png" class="avatar" />
 				<view>
 					<view class="username">Log in/Sign Up</view>
@@ -103,7 +104,7 @@
 	</view>
 </template>
 
-<script>	
+<script>
 	import TabBar from '@/components/jacksin-fooBar/fooBar.vue'
 	export default {
 		components: {
@@ -114,13 +115,18 @@
 
 			}
 		},
-		onShow() {
-		},
-		onLoad () {
+		onShow() {},
+		onLoad() {
 
 		},
 		methods: {
-
+			login() {
+				uni.navigateTo({
+					url: '/pages/me/login',
+					animationType: 'slide-in-bottom',
+					animationDuration: 200
+				})
+			}
 		}
 	}
 </script>
@@ -162,7 +168,8 @@
 	.menu {
 		display: flex;
 		margin: 0 -12px -12px;
-    flex-wrap: wrap;
+		flex-wrap: wrap;
+
 		.item {
 			width: 25%;
 			text-align: center;
@@ -177,17 +184,20 @@
 			height: 30px;
 		}
 	}
-.menu-2 {
-	.icon {
-		width: 40px;
-		height: 40px;
+
+	.menu-2 {
+		.icon {
+			width: 40px;
+			height: 40px;
+		}
 	}
-}
-.menu-3 {
-	.item {
-		padding: 0;
+
+	.menu-3 {
+		.item {
+			padding: 0;
+		}
 	}
-}
+
 	.title {
 		font-size: 16px;
 		font-weight: bold;

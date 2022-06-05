@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="status-bar"></view>
-		<uni-nav-bar left-icon="closeempty" right-text="Sign Up" title="Login" @clickRight="clickRight" />
+		<uni-nav-bar left-icon="closeempty" title="Sign Up" @clickLeft="clickLeft"/>
 		<view class="account">
 			<view class="type-select">
 				<view class="tabs">
@@ -26,16 +26,15 @@
 								:password="!isShowPassword" />
 						</view>
 					</view>
-
-
+					
+					
 					<view class="uni-btn-v">
 						<button :class="['btn-large', {'btn-active': account_active}]"
 							@click="login">{{t('login_login_now')}}</button>
 					</view>
 					<view style="text-align: right;margin-top: -8px">
 						<navigator url="pages/my/signup" hover-class="navigator-hover" class="navigate">
-							{{t('login_pwd_forget')}}
-						</navigator>
+							{{t('login_pwd_forget')}}</navigator>
 					</view>
 				</form>
 			</view>
@@ -54,8 +53,7 @@
 						</view>
 					</view>
 					<navigator url="pages/my/signup" hover-class="navigator-hover" class="navigate">
-						{{t('login_pwd_forget')}}
-					</navigator>
+						{{t('login_pwd_forget')}}</navigator>
 					<view class="uni-btn-v">
 						<button :class="['btn-large', {'btn-active': account_active}]"
 							@click="login">{{t('login_login_now')}}</button>
@@ -107,12 +105,8 @@
 			}
 		},
 		methods: {
-			clickRight() {
-				uni.navigateTo({
-					url: '/pages/me/signup',
-					animationType: 'slide-in-bottom',
-					animationDuration: 200
-				})
+			clickLeft() {
+				uni.navigateBack()
 			},
 			changeTab(type) {
 				this.type = type;

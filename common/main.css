@@ -1,6 +1,6 @@
 .uni-body,
 page {
-	background: #efefef;
+	background: #fff;
 }
 
 .uni-navbar--border {
@@ -18,21 +18,13 @@ uni-swiper {
 
 .status-bar {
 	height: var(--status-bar-height);
-/* 	background: rgb(44, 47, 75); */
 }
 
 
 .account {
-	padding: 16px 16px 44px;
+	padding: 16px 32px 44px;
 }
-
-.account .title {
-	color: #fff;
-	font-size: 26px;
-}
-
 .type-select {
-	margin-top: 44px;
 	margin-bottom: 20px;
 }
 
@@ -52,8 +44,13 @@ uni-swiper {
 }
 
 .btn-large {
-	background: #2c2f4b;
+	background: #e9eaee;
 	color: rgb(102, 106, 130)
+}
+
+uni-button:after {
+	border-radius: 0;
+	border: none;
 }
 
 .uni-form-item {
@@ -61,31 +58,45 @@ uni-swiper {
 }
 
 .form-label {
-	color: #fff;
 	margin-bottom: 8px;
 	font-size: 13px;
 }
 
 .uni-input {
-
-	border-radius: 4px;
-	height: 44px;
-	
+	height: 40px;
 	margin-bottom: 8px;
+	position: relative;
+}
+.uni-input:after {
+	content: " ";
+	width: 200%;
+	height: 200%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 1px solid rgba(0, 0, 0, .2);
+	-webkit-transform: scale(.5);
+	transform: scale(.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	box-sizing: border-box;
 }
 .uni-input-input,
 uni-textarea,
 .uni-input {
-	background: rgb(44, 47, 75);
-	color: #fff;
 	width: 100%;
 	padding: 0 12px;
 	box-sizing: border-box;
+
 }
+
+
+
 uni-textarea {
 	padding: 12px;
 
 }
+
 .form-item-tip {
 	font-size: 8px;
 	color: #fff;
@@ -153,11 +164,13 @@ uni-toast .uni-simple-toast__text {
 	color: #558ffb;
 }
 
-.password,.input-with-icon {
+.password,
+.input-with-icon {
 	position: relative;
 }
 
-.password .icon,.input-with-icon .icon {
+.password .icon,
+.input-with-icon .icon {
 	position: absolute;
 	right: 12px;
 	top: 14px;
@@ -192,9 +205,11 @@ uni-toast .uni-simple-toast__text {
 	padding: 10px 16px;
 	background-color: rgba(17, 17, 17, .9);
 }
+
 .uni-input-placeholder {
 	z-index: 999;
 }
+
 .list .item {
 	border: 1px solid rgb(39, 42, 64);
 	background: rgb(44, 47, 75);
@@ -235,6 +250,7 @@ uni-toast .uni-simple-toast__text {
 .ft-12 {
 	font-size: 12px;
 }
+
 .ft-14 {
 	font-size: 14px;
 }
