@@ -19,6 +19,12 @@ export default {
 		Vue.$ws.connect();
 	},
 	onShow() {
+		this.subscribe({
+			"sub": `market.overview`,
+		}, (data) => {
+			console.log(888)
+			this.$store.commit('setQuote', data)
+		});
 	},
 	created(){
 	},
@@ -39,7 +45,6 @@ export default {
 			Vue.$ws.addToSubscribe(symbol)
 		},
 		subscribe(data, callback){
-			console.log(data)
 			Vue.$ws.subscribe(data, callback)
 		},
 	}

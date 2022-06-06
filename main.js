@@ -2,7 +2,7 @@ import App from './App';
 import {
 	initVueI18n
 	} from '@dcloudio/uni-i18n';
-	import store from '@/store/index.js';
+import store from '@/store/index.js';
 import language from './locale/index.js'
 import VueClipBoard from 'vue-clipboard2';
 import wsMixin from './utils/wsMixin.js'

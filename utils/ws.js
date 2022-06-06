@@ -51,9 +51,13 @@ function webSocket() {
 			if (ae.ping) {
 				this.send(JSON.stringify({pong: ae.ping}));
 			}
-
 			if (this.data[ae.ch]) {
-				this.data[ae.ch](ae.tick);
+				if (ae.ch === 'market.overview') {
+					this.data[ae.ch](ae.data)
+				} else {
+					this.data[ae.ch](ae.tick);
+				}
+				
 			}
 			function utf8ArrayToString(array) { // 数据流转化为字符串, 兼容汉字
 				var out = "",
@@ -92,14 +96,12 @@ function webSocket() {
 			if (this.symbols != null)
 				data = Array.from(this.symbols)
 			if (data.length > 0) {
-				console.log("subscribe ", data.toString())
 				this.subscribe(data)
 			}
 		},
 
 		// 订阅数据
 		subscribe(data, callback) {
-			console.log(data);
 			this.send(JSON.stringify(data));
 			this.data[data.sub] = callback;
 		},

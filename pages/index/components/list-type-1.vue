@@ -15,12 +15,9 @@
 			</view>
 		</view>
 
-		<view v-for="single in ((item.type === 1 | item.type ===6) ? item.multipleMap[type] : item.singleList)">
+		<view v-for="single in ((item.type === 1 | item.type ===6) ? item.multipleMap[type] : list)">
 			<view class="flex l-item" @click="gotoTrade(single)">
-				<view class="text" v-if="item.type===2 || item.type===4">
-					<text class="ft-14">{{single.currency}}</text>
-				</view>
-				<view class="text" v-else>
+				<view class="text">
 					<text class="ft-14">{{single.baseCurrency}}</text>
 					<text class="ft-12 gray">/{{single.quoteCurrency}}</text>
 				</view>
@@ -57,8 +54,17 @@
 				type: 'btc',
 			}
 		},
-		mounted() {
-
+		computed: {
+			list() {
+				let list = this.item.singleList;
+				list.forEach(item=> {
+					if (this.$store.state.quote[item.symbol]) {
+						item.price = this.$store.state.quote[item.symbol].close
+					}
+					
+				})
+				return list;
+			}
 		},
 		methods: {
 			toggle() {

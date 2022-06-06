@@ -44,7 +44,16 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/markets/markets",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -63,7 +72,7 @@
 			"selectedIconPath": "static/icon/index-active.svg",
 			"text": "huobi"
 		}, {
-			"pagePath": "pages/index/index",
+			"pagePath": "pages/markets/markets",
 			"iconPath": "static/icon/market.svg",
 			"selectedIconPath": "static/icon/market-active.svg",
 			"text": "Markets"

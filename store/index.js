@@ -26,9 +26,15 @@ const store = new Vuex.Store({
 			uni.removeStorageSync('token')
 			uni.removeStorageSync('userInfo')
 		},
-		SET_QUOTE(state,value){
-			//console.log(value)
-			state.quote = value
+		setQuote(state,data){
+			let quote = {...state.quote};
+			data.forEach(item=> {
+				if(item.symbol==='btcusdt') {
+					console.log(item)
+				}
+				quote[item.symbol] = item
+			})
+			state.quote = {...quote};
 		},
 		SET_EVENT(state, value) {
 			state.event = value
@@ -40,6 +46,9 @@ const store = new Vuex.Store({
 		}, value) {
 			commit('SET_THEME', value)
 			uni.setStorageSync('theme',value)
+		},
+		updateQuote({commit}, value) {
+			commit('setQuote', value)
 		}
 	},
 	getters:{

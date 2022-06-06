@@ -10,7 +10,7 @@
 			</swiper-item>
 		</swiper>
 		<view class="topSymbolPrice flex">
-			<view v-for="(item, index) in topSymbolPrice" @click="gotoTrade(item)"
+			<view v-for="(item, index) in topSymbolList" @click="gotoTrade(item)"
 				:class="['t-item',{'up': item.upDown> 0}, {'down': item.upDown<=0}]">
 				<view><text class="symbol ft-14 bold">{{item.baseCurrency}}/{{item.quoteCurrency}}</text><text
 						class="ft-12">{{item.upDown>0? '+': ''}}{{(item.upDown*100).toFixed(2)}}%</text></view>
@@ -565,8 +565,21 @@
 				}
 			})
 		},
+		
 		onPullDownRefresh() {
 			this.getProduct();
+		},
+		computed: {
+			topSymbolList() {
+				let list = this.topSymbolPrice;
+				list.forEach(item=> {
+					if (this.$store.state.quote[item.symbol]) {
+						item.price = this.$store.state.quote[item.symbol].close
+					}
+					
+				})
+				return list;
+			}
 		},
 		methods: {
 			gotoTrade(item) {

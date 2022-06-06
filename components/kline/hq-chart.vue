@@ -883,7 +883,7 @@
 				getMarketDepth({
 					symbol: this.symbol,
 					depth: 20,
-					type: 'step9',
+					type: 'step5',
 				}).then(res => {
 					const {
 						status,
