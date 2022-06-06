@@ -72,9 +72,9 @@ function JSChartResource()
     
     this.FrameLogo=
     {
-        TextColor:'rgb(178,34,34)',
+        TextColor:'rgb(114, 134, 165)',
         Font:"bold 16px 微软雅黑",
-        Text:"*仅学习使用*"     //请求不要修改声明, 任何修改声明产生的任何法律责任由修改者自行独立承担，与HQChart插件作者无关。
+        Text:"Huobi Global"     //请求不要修改声明, 任何修改声明产生的任何法律责任由修改者自行独立承担，与HQChart插件作者无关。
     };
 
     this.FrameLatestPrice = 

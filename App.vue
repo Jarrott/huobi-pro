@@ -23,5 +23,5 @@
 	/*每个页面公共css */
 	
 	@import url("./common/main.css");
-	
+	@import url("http://at.alicdn.com/t/font_3434820_60st7turq0s.css");
 </style>

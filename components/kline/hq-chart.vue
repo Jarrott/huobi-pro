@@ -671,7 +671,9 @@
 				var blackStyle = JSCommonHQStyle.GetStyleConfig(
 					JSCommonHQStyle.STYLE_TYPE_ID.BLACK_ID
 				);
-
+				blackStyle.BGColor = 'rgb(16, 23, 35)';
+				blackStyle.DownBarColor = 'rgb(77,170,144)';
+				blackStyle.UpBarColor = 'rgb(209,75,100)';
 				JSCommon.JSChart.SetStyle(blackStyle);
 
 				var chart = JSCommon.JSChart.Init(element);

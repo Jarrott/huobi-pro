@@ -30,4 +30,10 @@ export const getSummaryLatest = (data) => {
 		data,
 	})
 }
-
+export const getIntroductionDetail= (data) => {
+	return request({
+		url: `${config.url}/-/x/hbg/v1/important/currency/introduction/detail`,
+		method: 'get',
+		data,
+	})
+}
