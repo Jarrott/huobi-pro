@@ -22,7 +22,6 @@ export default {
 		this.subscribe({
 			"sub": `market.overview`,
 		}, (data) => {
-			console.log(888)
 			this.$store.commit('setQuote', data)
 		});
 	},

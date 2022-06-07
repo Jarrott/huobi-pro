@@ -29,9 +29,6 @@ const store = new Vuex.Store({
 		setQuote(state,data){
 			let quote = {...state.quote};
 			data.forEach(item=> {
-				if(item.symbol==='btcusdt') {
-					console.log(item)
-				}
 				quote[item.symbol] = item
 			})
 			state.quote = {...quote};
