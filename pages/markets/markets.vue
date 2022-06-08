@@ -1,43 +1,17 @@
 <template>
 	<view>
-		<v-tabs v-model="current" :tabs="quotes.map(item =>item.toUpperCase())" @change="changeTab" :scroll="false"
-			:lineAnimation="false" height="40px" lineHeight="2px" class="top-tab"></v-tabs>
-		<view class="list">
-			<view class="flex i-title">
-				<view class="text">
-					Name
-				</view>
-				<view class="text">
-					Last Price
-				</view>
-				<view class="text">
-					24 Chg%
-				</view>
+		<view class="status-bar"></view>
+		<uni-nav-bar title="Login" leftWidth="0">
+			<view class="flex nav">
+				<view class="item">Favorites</view>
+				<view class="item active">Spot</view>
+				<view class="item">Derivates</view>
+				<view class="item">News</view>
 			</view>
-			<view v-for="item in currentList" :key="item.symbol_code" class="flex">
-				<view class="text">
-					<view>
-						<text class="ft-14">{{item.display_name.split('/')[0]}}</text><text
-							class="ft-12 gray">/{{item.display_name.split('/')[1]}}</text>
-					</view>
-					<view class="ft-12 gray">
-						{{item.vol}}
-					</view>
-				</view>
-				<view class="text ft-12">
-					{{item.price}}
-				</view>
-				<view class="text">
-					<button :class="['btn', 'ft-12', 
-						{'btn-up': item.upAndDown> 0}, 
-						{'btn-down': item.upAndDown<=0}] ">
-						{{item.upAndDown}}%
-					</button>
-
-				</view>
-			</view>
-		</view>
-
+		</uni-nav-bar>
+		<v-tabs v-model="current" :tabs="quotes.map(item =>item.text.toUpperCase())" @change="changeTab" :scroll="false"
+			:lineAnimation="false" height="32px" lineHeight="2px" class="top-tab"></v-tabs>
+		<list :list="currentList" :type="quotes[current].type||[]"></list>
 	</view>
 </template>
 
@@ -46,6 +20,7 @@
 		getGriddingSymbols,
 		getCommonSymbls,
 	} from '@/api/markets.js';
+	import List from './components/usdt-list';
 	import {
 		mapState
 	} from 'vuex'
@@ -53,7 +28,32 @@
 		data() {
 			return {
 				current: 0,
-				quotes: ["usdt", "husd", "usdc", "btc", "eth", "ht", "usdd", "flat"],
+				quotes: [{
+					text: "usdt",
+					type: ['All', 'Layer2', 'Metaverse', 'NFT', 'Storage', 'ETP', 'HECO', 'DeFi', 'Grayscale',
+						'Inno',
+						'Polkadot', 'gaming', 'web3', 'meme', 'DAO', 'Arbitrum', 'SOL', 'Fantom', 'AVAX',
+						'Cosmos', 'Near'
+					],
+				}, {
+					text: "husd",
+					type: ['All', 'DeFi']
+				}, {
+					text: "usdc"
+				}, {
+					text: "btc",
+					type: ['All', 'NFT', 'Metaverse', 'Polkadot', 'DeFi']
+				}, {
+					text: "eth",
+					type:['All', 'Metaverse', 'Polkadot', 'DeFi']
+				}, {
+					text: "ht",
+					type:['All','Metaverse']
+				}, {
+					text: "usdd",
+				}, {
+					text: "flat"
+				}],
 				list: [],
 				usdt: [],
 				husd: [],
@@ -61,23 +61,29 @@
 				btc: [],
 				eth: [],
 				ht: [],
-				usdd:[],
+				usdd: [],
 				flat: [],
+				partitions: 'ETP',
 			}
+		},
+		components: {
+			List,
 		},
 		computed: {
 			currentList() {
-				let list = this[this.quotes[this.current]];
+				let list = this[this.quotes[this.current].text];
+				let arr =[]
 				list.forEach(item => {
 					let quote = this.$store.state.quote[item.symbol_code];
 					if (quote) {
 						item.price = quote.close;
 						item.upAndDown = ((quote.close - quote.open) / quote.open * 100).toFixed(2);
 						item.vol = quote.vol;
+						arr.push(item)
 					}
-
+					
 				})
-				return list;
+				return arr;
 			}
 		},
 		onLoad() {
@@ -94,9 +100,7 @@
 			// 		this.quotes = quotes;
 			// 		symbols.forEach(item => {
 			// 			console.log(item)
-			// 			if (item.quote_currency == 'usdt') {
-			// 				this.list.push(item)
-			// 			}
+
 			// 		})
 			// 		console.log(this.list)
 			// 	}
@@ -104,13 +108,14 @@
 			getCommonSymbls().then(res => {
 				if (res.status == 'ok') {
 					res.data.forEach(item => {
-						if (	this[item.quote_currency]) {
+						if (item.partitions) {}
+						if (this[item.quote_currency]) {
 							this[item.quote_currency].push(item)
 						} else {
 							this[item.quote_currency] = [];
-								this[item.quote_currency].push(item)
+							this[item.quote_currency].push(item)
 						}
-						
+
 					})
 				}
 			});
@@ -119,13 +124,29 @@
 		methods: {
 			changeTab(index) {
 				this.current = index;
-				
+
 			}
 		}
 	}
 </script>
 
 <style lang="scss">
+	/deep/.v-tabs__container {
+		&:after {
+			content: " ";
+			width: 200%;
+			height: 200%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-bottom: 1px solid rgba(0, 0, 0, .2);
+			-webkit-transform: scale(.5);
+			transform: scale(.5);
+			-webkit-transform-origin: 0 0;
+			transform-origin: 0 0;
+			box-sizing: border-box;
+		}
+	}
 	.list {
 		padding: 16px;
 		background: #fff;
@@ -229,5 +250,19 @@
 				text-align: right;
 			}
 		}
+	}
+	.nav {
+		font-size: 15px;
+		font-weight: 500;
+		color: #999;
+		margin-left: -16px;
+		.item {
+			padding: 8px;
+			&.active {
+				color: #494949;
+				font-size: 16px;
+			}
+		}
+		
 	}
 </style>
